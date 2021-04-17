@@ -16,7 +16,9 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-    "eslint-check": "eslint-config-prettier ./src/App.js"
+		"eslint-prettier-check": "eslint-config-prettier ./src/App.js",
+		"eslint-check": "eslint . --ext .js",
+		"lint": "eslint --fix . --ext .js"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -52,6 +54,7 @@
 		"eslint-plugin-react-hooks": "4.0.8",
 		"eslint-plugin-testing-library": "3.9.0",
 		"install-peerdeps": "^3.0.3",
-		"prettier": "^2.2.1"
+		"prettier": "^2.2.1",
+		"typescript": "^4.2.4"
 	}
 }

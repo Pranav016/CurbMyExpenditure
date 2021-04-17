@@ -17,6 +17,8 @@
 				"tabWidth": 4,
 				"jsxBracketSameLine": true
 			}
-		]
+		],
+		"arrow-body-style": "off",
+		"prefer-arrow-callback": "off"
 	}
 }
