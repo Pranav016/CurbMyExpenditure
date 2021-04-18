@@ -19,6 +19,7 @@
 			}
 		],
 		"arrow-body-style": "off",
-		"prefer-arrow-callback": "off"
+		"prefer-arrow-callback": "off",
+		"indent": [4, 4, { "SwitchCase": 1 }]
 	}
 }
