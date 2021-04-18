@@ -33,6 +33,7 @@
 					"++": true
 				}
 			}
-		]
+		],
+		"spaced-comment": ["error", "always"]
 	}
 }
