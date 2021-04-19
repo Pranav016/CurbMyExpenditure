@@ -10,7 +10,7 @@
 	"plugins": ["react", "prettier"],
 	"rules": {
 		"prettier/prettier": [
-			"error",
+			2,
 			{
 				"singleQuote": true,
 				"trailingComma": "es5",
@@ -22,18 +22,6 @@
 		],
 		"arrow-body-style": "off",
 		"prefer-arrow-callback": "off",
-		"quotes": ["error", "single"],
-		"space-infix-ops": ["warn", { "int32Hint": false }],
-		"space-unary-ops": [
-			"warn",
-			{
-				"words": true,
-				"nonwords": false,
-				"overrides": {
-					"++": true
-				}
-			}
-		],
-		"spaced-comment": ["error", "always"]
+		"spaced-comment": [2, "always"]
 	}
 }
