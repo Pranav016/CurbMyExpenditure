@@ -1,4 +1,5 @@
 // This component acts as a wrapper component over the expenses and the expense items and avoids some duplication of css code
+import React from 'react';
 import './Card.css';
 
 function Card(props) {

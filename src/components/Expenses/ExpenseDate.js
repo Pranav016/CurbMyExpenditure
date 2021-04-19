@@ -1,6 +1,7 @@
+import React from 'react';
 import './ExpenseDate.css';
 
-function ExpenseDate(props) {
+const ExpenseDate = (props) => {
 	return (
 		<div className='expense-date'>
 			<div className='expense-date__month'>
@@ -12,6 +13,6 @@ function ExpenseDate(props) {
 			<div className='expense-date__year'>{props.date.getFullYear()}</div>
 		</div>
 	);
-}
+};
 
 export default ExpenseDate;
