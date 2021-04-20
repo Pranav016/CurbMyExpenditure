@@ -3,6 +3,9 @@ import './ExpenseItem.css';
 import ExpenseDate from './ExpenseDate';
 import Card from '../UI/Card';
 
+/* This is a statless or a dumb or a presentational
+component since there is no change of state here */
+
 const ExpenseItem = (props) => {
 	return (
 		<Card className='expense-item'>

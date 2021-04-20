@@ -14,6 +14,7 @@ const Expenses = (props) => {
 	return (
 		<div>
 			<Card className='expenses'>
+				{/* here ExpenseFilter is called a 'controlled component' since its logic is implemented in the Expenses.js and data is send back and forth from it */}
 				<ExpenseFilter
 					selected={filteredYear}
 					onChangeFilter={filterChangeHandler}

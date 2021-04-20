@@ -53,7 +53,8 @@ const ExpenseForm = (props) => {
 			date: new Date(enteredDate),
 		};
 
-		props.onSaveExpenseData(expenseData); // sending data to parent component
+		props.onSaveExpenseData(expenseData);
+		// sending data to parent component to be appended to the expenses obj
 
 		// since we have two-way binding
 		setEnteredTitle('');
