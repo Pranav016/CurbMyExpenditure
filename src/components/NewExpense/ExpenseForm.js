@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 	/* useState hook will help save the value in variable
 	even when the component is re-rendered */
 	const [enteredTitle, setEnteredTitle] = useState('');
@@ -52,7 +52,8 @@ const ExpenseForm = () => {
 			amount: enteredAmount,
 			date: new Date(enteredDate),
 		};
-		console.log(expenseData);
+
+		props.onSaveExpenseData(expenseData); // sending data to parent component
 
 		// since we have two-way binding
 		setEnteredTitle('');
