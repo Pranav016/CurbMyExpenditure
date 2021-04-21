@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
-import expenses from './data/dummy_data.js';
+import expensesData from './data/dummy_data.js';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
-	const addExpenseHandler = (expense) => {
-		console.log(expense);
+	const [newExpenseData, setNewExpenseData] = useState(expensesData);
+	const addExpenseHandler = (newExpense) => {
+		setNewExpenseData((prevExpenses) => [newExpense, ...prevExpenses]);
 	};
 	return (
 		<div>
 			<h1>Curb-My-Pocket</h1>
 			<NewExpense onAddExpense={addExpenseHandler} />
-			<Expenses items={expenses} />
+			<Expenses items={newExpenseData} /> {/* two way binding */}
 		</div>
 	);
 };
