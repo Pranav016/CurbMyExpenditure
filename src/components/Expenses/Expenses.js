@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import ExpenseItem from './ExpenseItem';
 import './Expenses.css';
 import Card from '../UI/Card';
 import ExpenseFilter from '../ExpenseFilter/ExpenseFilter';
+import ExpenseList from '../ExpenseList/ExpenseList';
 
 const Expenses = (props) => {
 	const [filteredYear, setFileredYear] = useState('2021');
@@ -10,6 +10,9 @@ const Expenses = (props) => {
 	const filterChangeHandler = (selectedYear) => {
 		setFileredYear(selectedYear);
 	};
+	const filteredExpenses = props.items.filter((expense) => {
+		return expense.date.getFullYear().toString() === filteredYear;
+	});
 
 	return (
 		<div>
@@ -19,19 +22,7 @@ const Expenses = (props) => {
 					selected={filteredYear}
 					onChangeFilter={filterChangeHandler}
 				/>
-				{props.items.map((expense) => (
-					<ExpenseItem
-						key={expense.id}
-						/* we added a key here because React was re-rendering all the
-						ExpenseItems when a new one was added and if there was state
-						in any of them then it would've lost it.
-						Key helps identify the previously added components and renders
-						only those that were recently added */
-						title={expense.title}
-						amount={expense.amount}
-						date={expense.date}
-					/>
-				))}
+				<ExpenseList items={filteredExpenses} />
 			</Card>
 		</div>
 	);
