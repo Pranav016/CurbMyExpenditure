@@ -51,8 +51,21 @@
 		"eslint-plugin-react": "7.20.3",
 		"eslint-plugin-react-hooks": "4.0.8",
 		"eslint-plugin-testing-library": "3.9.0",
+		"husky": "^6.0.0",
 		"install-peerdeps": "^3.0.3",
+		"lint-staged": "^10.5.4",
 		"prettier": "^2.2.1",
 		"typescript": "^4.2.4"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{js,json,css}": [
+			"prettier --write .",
+			"yarn run lint"
+		]
 	}
 }
