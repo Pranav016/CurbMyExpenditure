@@ -10,7 +10,7 @@ const App = () => {
 	};
 	return (
 		<div>
-			<h1>Curb-My-Pocket</h1>
+			<h1>Curb-My-Expenses</h1>
 			<NewExpense onAddExpense={addExpenseHandler} />
 			<Expenses items={newExpenseData} /> {/* two way binding */}
 		</div>
