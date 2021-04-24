@@ -57,7 +57,7 @@ const ExpenseForm = (props) => {
 		props.onSaveExpenseData(expenseData);
 		// sending data to parent component to be appended to the expenses obj
 
-		// since we have two-way binding
+		// since we have two-way binding so after form is submitted we reset the input values
 		setEnteredTitle('');
 		setEnteredAmount('');
 		setEnteredDate('');

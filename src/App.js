@@ -10,7 +10,13 @@ const App = () => {
 	};
 	return (
 		<div>
-			<h1>Curb-My-Expenses</h1>
+			<h1
+				style={{
+					margin: '0 50%',
+					transform: 'translateX(-50%)',
+				}}>
+				Curb My Expenditure
+			</h1>
 			<NewExpense onAddExpense={addExpenseHandler} />
 			<Expenses items={newExpenseData} /> {/* two way binding */}
 		</div>
