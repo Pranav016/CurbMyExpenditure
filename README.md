@@ -1,3 +1,13 @@
+# CurbMyExpenditure
+- *CurbMyExpenditure* is an expense tracker app that helps track monthly expenses by maintaining lists and also helps visualize the expenditure with the help of a chart thus making the interface even more intuitive.
+- You add your expenses to the list and each expense has fields like name, amount and date of the expenditure done.
+
+![CI-CD](https://github.com/Pranav016/CurbMyExpenditure/actions/workflows/ci-cd.yaml/badge.svg)
+
+# Demo-
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
