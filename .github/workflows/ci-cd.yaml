@@ -1,0 +1,41 @@
+name: CI
+
+on: 
+  push:
+    branches: ["master"]
+
+jobs:
+  ci:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: setup node
+          uses: actions/setup-node@v2
+          with:
+            node-version: "16.x"
+        - name: install dependencies
+          run: yarn
+        - name: ci
+          run: yarn lint-check
+        - run: yarn eslint-config-prettier
+        - run: yarn lint
+        - name: build
+          run: yarn run build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy to netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with: 
+          publish-dir: "./build"
+          production-branch: "master"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "${{ github.event.head_commit.message }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+
+
