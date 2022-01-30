@@ -1,11 +1,11 @@
-name: CI
+name: CI-CD
 
 on: 
   push:
     branches: ["master"]
 
 jobs:
-  ci:
+  ci-cd:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v2
@@ -29,25 +29,22 @@ jobs:
         - name: ci
           run: yarn lint-check
         - name: conflicts lint-prettier
-          run: yarn eslint-config-prettier
+          run: yarn run eslint-prettier-check
         - run: yarn lint
         - name: build
           run: yarn run build
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: deploy to netlify
-        uses: nwtgck/actions-netlify@v1.2
-        with: 
-          publish-dir: "./build"
-          production-branch: "master"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "${{ github.event.head_commit.message }}"
-          enable-pull-request-comment: false
-          enable-commit-comment: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        timeout-minutes: 5
+        - name: deploy to netlify
+          uses: nwtgck/actions-netlify@v1.2
+          with: 
+            publish-dir: "./build"
+            production-branch: "master"
+            github-token: ${{ secrets.GITHUB_TOKEN }}
+            deploy-message: "${{ github.event.head_commit.message }}"
+            enable-pull-request-comment: false
+            enable-commit-comment: true
+          env:
+            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          timeout-minutes: 5
 
 
