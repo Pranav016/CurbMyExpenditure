@@ -1,10 +1,11 @@
 # CurbMyExpenditure
-- *CurbMyExpenditure* is an expense tracker app that helps track monthly expenses by maintaining lists and also helps visualize the expenditure with the help of a chart thus making the interface even more intuitive.
-- You add your expenses to the list and each expense has fields like name, amount and date of the expenditure done.
+- *CurbMyExpenditure* is an expense tracker app that helps track monthly expenses by maintaining lists and also helps visualize the expenditure with the help of a chart, thus making the interface even more intuitive.
+- You can add your expenses to the list and each expense has fields like `name`, `amount` and `date` of the expenditure.
 
-![CI-CD](https://github.com/Pranav016/CurbMyExpenditure/actions/workflows/ci-cd.yaml/badge.svg)
+![CI-CD](https://github.com/Pranav016/CurbMyExpenditure/actions/workflows/ci-cd.yaml/badge.svg) [![Netlify Status](https://api.netlify.com/api/v1/badges/502d6885-afe0-4275-9665-3a428a282602/deploy-status)](https://app.netlify.com/sites/curbmyexpenditure/deploys)
 
 # Demo-
+![CurbMyExpenditure](https://user-images.githubusercontent.com/54665036/151777941-08061c8b-9d7f-46e6-aa71-5c4393ff4be6.gif)
 
 
 
